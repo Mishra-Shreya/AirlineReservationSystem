@@ -4590,14 +4590,6 @@ div.cs-active {
     cursor: default
 }
 
-@font-face {
-    font-family: themify;
-    src: url(fonts/themify.eot?-fvbane);
-    src: url(fonts/themify.eot?#iefix-fvbane) format('embedded-opentype'), url(fonts/themify.woff?-fvbane) format('woff'), url(fonts/themify.ttf?-fvbane) format('truetype'), url(fonts/themify.svg?-fvbane#themify) format('svg');
-    font-weight: 400;
-    font-style: normal
-}
-
 div.cs-skin-border {
     background: 0 0;
     font-size: 16px;
@@ -4620,7 +4612,7 @@ div.cs-skin-border {
 
 .cs-skin-border .cs-selected span::after,
 .cs-skin-border>span::after {
-    font-family: themify;
+    font-family: "Nunito";
     /* content: "\e648" */
 }
 

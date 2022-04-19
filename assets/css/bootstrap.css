@@ -4316,6 +4316,69 @@ fieldset[disabled] .btn-danger:hover {
     background-color: #fff
 }
 
+.btn-blue {
+    color: #fff;
+    background-color: #0080ff;
+    border-color: #0080ff
+}
+
+.btn-blue.focus,
+.btn-blue:focus {
+    color: #fff;
+    background-color: #005eff;
+    border-color: #005eff
+}
+
+.btn-blue.active,
+.btn-blue:active,
+.btn-blue:hover,
+.open>.btn-blue.dropdown-toggle {
+    color: #fff;
+    background-color: #005eff;
+    border-color: #005eff
+}
+
+.btn-blue.active.focus,
+.btn-blue.active:focus,
+.btn-blue.active:hover,
+.btn-blue:active.focus,
+.btn-blue:active:focus,
+.btn-blue:active:hover,
+.open>.btn-blue.dropdown-toggle.focus,
+.open>.btn-blue.dropdown-toggle:focus,
+.open>.btn-blue.dropdown-toggle:hover {
+    color: #fff;
+    background-color: #005eff;
+    border-color: #005eff
+}
+
+.btn-blue.disabled,
+.btn-blue.disabled.active,
+.btn-blue.disabled.focus,
+.btn-blue.disabled:active,
+.btn-blue.disabled:focus,
+.btn-blue.disabled:hover,
+.btn-blue[disabled],
+.btn-blue[disabled].active,
+.btn-blue[disabled].focus,
+.btn-blue[disabled]:active,
+.btn-blue[disabled]:focus,
+.btn-blue[disabled]:hover,
+fieldset[disabled] .btn-blue,
+fieldset[disabled] .btn-blue.active,
+fieldset[disabled] .btn-blue.focus,
+fieldset[disabled] .btn-blue:active,
+fieldset[disabled] .btn-blue:focus,
+fieldset[disabled] .btn-blue:hover {
+    background-color: #0080ff;
+    border-color: #0080ff
+}
+
+.btn-blue .badge {
+    color: #0080ff;
+    background-color: #fff
+}
+
 .btn-link {
     color: #337ab7;
     font-weight: 400;

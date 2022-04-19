@@ -18,44 +18,70 @@
           <h1 id="fh5co-logo"><a href="index.html">.Traveler.</a></h1>
           <nav id="fh5co-menu-wrap" role="navigation">
             <ul class="sf-menu" id="fh5co-primary-menu">
+              <li class="active"><a href="admin.php">Admin</a></li>
+            </ul>
+            <ul class="sf-menu" id="fh5co-primary-menu">
               <li class="active"><a href="index.html">Airline Reservation system</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
+
     <div class="fh5co-hero">
       <div class="fh5co-overlay"></div>
       <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image:url(assets/images/cover_bg_3.jpg);">
         <div class="desc">
           <div class="container">
             <div class="row">
-              <div class="col-sm-5 col-md-5">
+              <div class="col-sm-6 col-md-6">
                 <div class="tabulation animate-box">
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#" >Flights</a></li>
                   </ul>
-                  <form action="#" method="post">
+                  <form action="results.php" method="post">
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="flights">
                         <div class="row">
                           <div class="col-xxs-12 col-xs-6 mt">
                             <div class="input-field">
-                              <label>From:</label>
-                              <input type="text" class="form-control" placeholder="Los Angeles, USA">
+                              <label for="from">From:</label>
+                              <!-- <input type="text" name="from" id="from" class="form-control" placeholder="Los Angeles, USA"> -->
+                              <select class="form-control" id="from" name="from">
+                                <option value="BOM">Mumbai - BOM</option>
+                                <option value="DEL">Delhi - DEL</option>
+                                <option value="BLR">Bangalore - BLR</option>
+                                <option value="HYD">Hyderabad - HYD</option>
+                                <option value="CCN">Chennai - CCN</option>
+                                <option value="PUNE">Pune - PUNE</option>
+                                <option value="GOI">Goa - GOI</option>
+                                <option value="BNS">Varanasi - BNS</option>
+                                <option value="MAA">Kolkata - MAA</option>
+                              </select>
                             </div>
                           </div>
                           <div class="col-xxs-12 col-xs-6 mt">
                             <div class="input-field">
-                              <label>To:</label>
-                              <input type="text" class="form-control" placeholder="Tokyo, Japan">
+                              <label for="to">To:</label>
+                              <!-- <input type="text" name="to" id="to" class="form-control" placeholder="Tokyo, Japan"> -->
+                              <select class="form-control" id="to" name="to">
+                                <option value="DEL">Delhi - DEL</option>
+                                <option value="BOM">Mumbai - BOM</option>
+                                <option value="BLR">Bangalore - BLR</option>
+                                <option value="HYD">Hyderabad - HYD</option>
+                                <option value="CCN">Chennai - CCN</option>
+                                <option value="PUNE">Pune - PUNE</option>
+                                <option value="GOI">Goa - GOI</option>
+                                <option value="BNS">Varanasi - BNS</option>
+                                <option value="MAA">Kolkata - MAA</option>
+                              </select>
                             </div>
                           </div>
                           <div class="col-sm-12 mt alternate">
                             
                             <div class="input-field">
                               <label>Date:</label>
-                              <input type="date" class="form-control" id="datepicker" placeholder="mm/dd/yyyy">
+                              <input type="date" class="form-control" name="date" id="datepicker" placeholder="mm/dd/yyyy">
                             </div>
                           </div>
                           <!-- <div class="col-xxs-12 col-xs-6 mt alternate">
@@ -64,7 +90,7 @@
                               <input type="text" class="form-control" placeholder="mm/dd/yyyy">
                             </div>
                           </div> -->
-                          <div class="col-sm-12 mt">
+                          <!-- <div class="col-sm-12 mt">
                             <div class="form-group">
                               <label for="class">Class:</label>
                               <select class="form-control" id="class">
@@ -72,33 +98,33 @@
                                 <option>Business</option>
                               </select>
                             </div>
-                          </div>
+                          </div> -->
                           <div class="col-xxs-12 col-xs-6 mt">
                             <div class="form-group">
                               <label for="adults">Adults:</label>
-                              <select class="form-control" id="adults">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                              <select class="form-control" id="adult" name="adult">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                               </select>
                             </div>
                           </div>
                           <div class="col-xxs-12 col-xs-6 mt">
                             <div class="form-group">
                               <label for="adults">Children:</label>
-                              <select class="form-control" id="adults">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                              <select class="form-control" id="child" name="child">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                               </select>
                             </div>
                           </div>
                           <div class="col-xs-12">
-                            <input type="submit" class="btn btn-primary btn-block" value="Search Flight">
+                            <input type="submit" value="Submit" name="submit" class="btn btn-primary btn-block">
                           </div>
                         </div>
                       </div>
@@ -107,8 +133,8 @@
                 </div>
               </div>
               <div class="desc2 animate-box">
-                <div class="col-sm-7 col-md-7">
-                  <p>Lorem ipsum dolor sit amet</p>
+                <div class="col-sm-6 col-md-6">
+                  <!-- <p>Lorem ipsum dolor sit amet</p> -->
                   <h2>Search your flights here</h2>
                   <h3>Fly to Anywhere</h3>
                   <span class="price">₹1999</span></div>
@@ -118,6 +144,7 @@
         </div>
       </div>
     </div>
+
     <div id="fh5co-tours" class="fh5co-section-gray">
       <div class="container">
         <div class="row">
@@ -131,6 +158,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

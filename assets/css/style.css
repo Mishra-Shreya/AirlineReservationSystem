@@ -1,3 +1,8 @@
+:root {
+    --font-family-sans-serif: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+}
+
 a,
 a:hover {
     color: #F78536
@@ -30,26 +35,6 @@ body.fh5co-offcanvas {
     overflow: hidden
 }
 
-@font-face {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 300;
-    src: local("Open Sans Light"), url(fonts/OpenSans-Light.woff2) format("woff2")
-}
-
-@font-face {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 400;
-    src: local("Open Sans"), url(fonts/OpenSans.woff2) format("woff2")
-}
-
-@font-face {
-    font-family: "Open Sans";
-    font-style: normal;
-    font-weight: 700;
-    src: local("Open Sans Bold"), url(fonts/OpenSans-Bold.woff2) format("woff2")
-}
 
 body {
     line-height: 1.6;
@@ -1833,8 +1818,9 @@ div.cs-select span {
 .btn:active,
 .btn:focus,
 .btn:hover {
-    background: #11d141 !important;
-    color: #fff;
+    /* background: #00000033 !important; */
+    filter: brightness(150%);
+    color: #ffffff;
     outline: 0 !important
 }
 
