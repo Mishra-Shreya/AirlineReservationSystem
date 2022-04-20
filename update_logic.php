@@ -22,7 +22,8 @@
             $query = mysqli_query($conn,$updateqry);
 
             if ($conn->query($updateqry) === TRUE) {
-                echo "New record updated successfully";
+                // echo "New record updated successfully";
+                echo '<script>alert("Record Updated Successfully")</script>';
                 header("location: ./admin.php");
               } else {
                 echo "Error: " . $updateqry . "<br>" . $conn->error;

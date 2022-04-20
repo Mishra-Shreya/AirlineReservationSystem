@@ -13,26 +13,45 @@ require_once 'header.php';
                             <div class="container mb-2">
                                 <form action="" method="post">
                                     <div class="row ">
-                                        <div class="col-md-2"><button type="submit" name="lowest" class="btn btn-info"> Lowest first </button></div>
+                                        <div class="col-md-1">
+                                            <button type="submit" name="refresh" class="btn btn-blue btn-block">
+                                                <span class="glyphicon ">&#x21bb;</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="submit" name="lowest" class="btn btn-info btn-block">LOWEST FIRST</button>
+                                            
+                                                <!-- <div class="form-group">
+                                                <label for="adults">SORT BY:</label>
+                                                <select class="form-control" id="gender" name="gender">
+                                                    <option value="none" selected hidden>Sort by:</option>
+                                                    <button type="submit" name="lowest" class="btn btn-info"><option value="lowest">Charges (low to high) &nbsp; &nbsp; &nbsp;</option></button>
+                                                    <option value="highest">Charges (low to high)</option>
+                                                </select>
+                                                </div> -->
+                                           
+                                        </div>
                                         
-                                        <div class="col-md-2"><button type="submit" name="group" class="btn btn-blue"> Group By </button></div>
+                                        <div class="col-md-2"><button type="submit" name="group" class="btn btn-blue btn-block">Group By</button></div>
+
+                                        <div class="col-md-2"><a class="btn btn-info btn-block" href="./union.php?union=yes">Booked flights</a></div>
                                         
                                         <div class="col-md-3">
                                             <div class="row">
-                                                <div class="col-md-10">
-                                                    <input class="form-control mr-sm-2"  type="search" placeholder="Search" name="search_val" aria-label="Search">
+                                                <div class="col-md-9" style="padding-right:0;">
+                                                    <input style="border-top-right-radius: 0; border-bottom-right-radius: 0;" class="form-control mr-sm-2"  type="search" placeholder="Search" name="search_val" aria-label="Search">
                                                 </div>
-                                                <div class="col-md-2">
-                                                    <button class="btn btn-success my-2 my-sm-0" name="search" type="search">Search</button>
+                                                <div class="col-md-3" style="padding-left:0;">
+                                                    <button style="border-top-left-radius: 0; border-bottom-left-radius: 0;" class="btn btn-success my-2 my-sm-0 btn-block" name="search" type="search">&#x1F50E;&#xFE0E;</button>
                                                 </div>
                                             </div>
-                                        
                                         </div>
-                                 
+
                                     </div>
                                     
                                 </form>
                             </div>
+
                             &nbsp;
 
                             <div class="table-responsive">
@@ -83,10 +102,15 @@ require_once 'header.php';
                                         if (isset($_POST['lowest'])) { 
                                             $select_flight = "SELECT * FROM flights ORDER BY charges;";
                                         } elseif (isset($_POST['group'])) {
-                                            $select_flight = "SELECT * FROM flights Group BY flightname;";
-                                        } elseif (isset($_POST['search'])) {
+                                            $select_flight = "SELECT id, flightid, flightname, avg(capacity) as capacity, vacant_seats, startdes, finaldes, departuretime, arrivaltime, sum(charges) as charges FROM flights Group BY flightname;";
+                                        } 
+                                        // elseif (isset($_POST['union'])) {
+                                        //     header("location: ./union.php");
+                                        //     // $select_flight = "SELECT flightid FROM flights UNION ALL SELECT flightid FROM book ;";
+                                        // } 
+                                        elseif (isset($_POST['search'])) {
                                             $search = $_POST['search_val'];
-                                            $select_flight = "SELECT * FROM flights WHERE CONCAT(flightid,flightname,capacity,vacant_seats,startdes,finaldes,departuretime,arrivaltime,charges) LIKE '%$search%';";
+                                            $select_flight = "SELECT * FROM flights WHERE CONCAT(flightid, flightname, capacity, vacant_seats, startdes, finaldes, departuretime, arrivaltime, charges) LIKE '%$search%'";
                                         } else {
                                             $select_flight = "SELECT * FROM flights";
                                         }

@@ -19,7 +19,7 @@ if (isset($_POST['book'])) {
                   <ul class="nav nav-tabs">
                     <li class="active"><a href="#" >Details</a></li>
                   </ul>
-                  <form action="book.php" method="post">
+                  <form action="booklogic.php" method="post">
                     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane active" id="flights">
                         <div class="row">
@@ -81,28 +81,28 @@ if (isset($_POST['book'])) {
 
     <?php
 
-        if (isset($_POST['booksubmit'])) {
+    //     if (isset($_POST['booksubmit'])) {
             
-            //Add database connection
-            include 'data/database.php';
+    //         //Add database connection
+    //         include 'data/database.php';
 
-            $name = $_POST['name'];
-            $gender = $_POST['gender'];
-            $aadhar = (int)$_POST['aadhar'];
-            // var_dump($aadhar);
-            $flightid = $_POST['flightid'];
+    //         $name = $_POST['name'];
+    //         $gender = $_POST['gender'];
+    //         $aadhar = (int)$_POST['aadhar'];
+    //         // var_dump($aadhar);
+    //         $flightid = $_POST['flightid'];
 
-            $insert = "INSERT into book (name, gender, aadhar, flightid) values ('$name', '$gender', $aadhar, '$flightid');";
+    //         $insert = "INSERT into book (name, gender, aadhar, flight_id) values ('$name', '$gender', $aadhar, '$flightid');";
 
-            // $query = mysqli_query($conn,$insert);
+    //         // $query = mysqli_query($conn,$insert);
 
-            if ($conn->query($insert) === TRUE) {
-                echo '<script>alert("Your flight is booked")</script>';
-                // echo "New record created successfully";
-              } else {
-                echo "Error: " . $insert . "<br>" . $conn->error;
-              }
-        }
+    //         if ($conn->query($insert) === TRUE) {
+    //             echo '<script>alert("Your flight is booked")</script>';
+    //             header("location: ./index.html");
+    //           } else {
+    //             echo "Error: " . $insert . "<br>" . $conn->error;
+    //           }
+    //     }
     // }
         require_once 'footer.php';
         ?>
