@@ -102,7 +102,7 @@ require_once 'header.php';
                                         if (isset($_POST['lowest'])) { 
                                             $select_flight = "SELECT * FROM flights ORDER BY charges;";
                                         } elseif (isset($_POST['group'])) {
-                                            $select_flight = "SELECT id, flightid, flightname, avg(capacity) as capacity, vacant_seats, startdes, finaldes, departuretime, arrivaltime, sum(charges) as charges FROM flights Group BY flightname;";
+                                            $select_flight = "SELECT id, flightid, flightname, sum(capacity) as capacity, vacant_seats, startdes, finaldes, departuretime, arrivaltime, avg(charges) as charges FROM flights Group BY flightname;";
                                         } 
                                         // elseif (isset($_POST['union'])) {
                                         //     header("location: ./union.php");
