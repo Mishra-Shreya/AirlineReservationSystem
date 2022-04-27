@@ -34,9 +34,9 @@ require_once 'header.php';
                                         
                                         <div class="col-md-2"><button type="submit" name="group" class="btn btn-blue btn-block">Group By</button></div>
 
-                                        <div class="col-md-2"><a class="btn btn-info btn-block" href="./union.php?union=yes">Booked flights</a></div>
+                                        <div class="col-md-3"><a class="btn btn-info btn-block" href="./union.php?union=yes">Booked flights</a></div>
                                         
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="row">
                                                 <div class="col-md-9" style="padding-right:0;">
                                                     <input style="border-top-right-radius: 0; border-bottom-right-radius: 0;" class="form-control mr-sm-2"  type="search" placeholder="Search" name="search_val" aria-label="Search">

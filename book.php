@@ -52,7 +52,7 @@ if (isset($_POST['book'])) {
                             
                             <div class="input-field">
                               <label>Aadhar:</label>
-                              <input type="number" class="form-control" name="aadhar" id="aadhar" placeholder="xxxxxxxxxxxx">
+                              <input type="number" class="form-control" name="aadhar" id="aadhar" placeholder="xxxxxxxxxxxx" minlength="12" maxlength="12">
                             </div>
                           </div>
                           
