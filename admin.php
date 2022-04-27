@@ -110,7 +110,7 @@ require_once 'header.php';
                                         // } 
                                         elseif (isset($_POST['search'])) {
                                             $search = $_POST['search_val'];
-                                            $select_flight = "SELECT * FROM flights WHERE CONCAT(flightid, flightname, capacity, vacant_seats, startdes, finaldes, departuretime, arrivaltime, charges) LIKE '%$search%'";
+                                            $select_flight = "SELECT * FROM flights WHERE CONCAT(id, flightid, flightname, capacity, vacant_seats, startdes, finaldes, departuretime, arrivaltime, charges) LIKE '%$search%'";
                                         } else {
                                             $select_flight = "SELECT * FROM flights";
                                         }
